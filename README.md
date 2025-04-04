@@ -1,33 +1,38 @@
-﻿# Liga-Rechi
-#"Liga Rechi" is a web portal aimed at enhancing public speaking skills and uniting a community of speakers, trainers, and leaders. The platform provides structured access to educational content, events, and collaboration tools.
+# Liga Rechi - Speech League Portal
 
-#Key Features:
+## Description
+**"Liga Rechi"** is a web portal designed to enhance public speaking skills and bring together a community of speakers, trainers, and leaders. The platform offers structured access to educational content, events, and collaboration tools.
 
-##Website Showcase: A public-facing website introducing users to Liga Rechi's mission, upcoming events, and available programs.
+---
 
-##Admin Panel: A secure area where administrators manage strategic settings, user roles, and content.
+## Key Features
 
-##Multi-Level Account System:
+### Website Showcase
+A public-facing site that introduces users to Liga Rechi’s mission, upcoming events, and available programs.
 
-+**Guest**: Basic access to view content.
+### Admin Panel
+A secure section where administrators manage strategic settings, user roles, and content.
 
-+**Activist**: Participation in discussions and events.
+### Multi-Level Account System
+Liga Rechi provides five levels of user access:
+- **Guest**: Basic access to view content.
+- **Activist**: Participation in discussions and events.
+- **Trainer**: Ability to host and manage training sessions.
+- **Curator**: Moderation rights and content oversight.
+- **Leader**: Full management of the platform’s educational resources.
 
-+**Trainer**: Ability to host and manage training sessions.
+---
 
-+**Curator**: Moderation rights and content oversight.
+## Project Goals
+- Develop two initial versions:
+  - **Yekaterinburg** (ru/.rf domain)
+  - **Astana** (kz domain)
 
-+**Leader**: Full management of the platform’s educational resources.
+---
 
-##Project Goals:
+## Scalability
+The system is designed for expansion, allowing additional cities to establish their own localized versions of the platform in the future.
 
-###Develop two versions of the portal:
+---
 
-+One for **Yekaterinburg** (.ru/.rf domain).
-
-+One for **Astana** (.kz domain).
-
-##Scalability:
-
-+The system is designed to expand, allowing additional cities to establish their own localized versions of the platform.
-
+Join us in shaping the future of public speaking!
