@@ -1,0 +1,74 @@
+.partnership-section {
+  padding: 3rem 0;
+  background-color: #f9f9f9;
+}
+
+.partnership-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.partnership-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+}
+
+.partnership-image {
+  flex: 1;
+  max-width: 300px;
+}
+
+.partnership-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.partnership-text {
+  flex: 2;
+  padding: 2rem;
+}
+
+.partnership-card-title {
+  color: #c00c39;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.partnership-card-content {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.partnership-contact {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.contact-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.contact-phone,
+.contact-email {
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .partnership-card {
+    flex-direction: column;
+  }
+
+  .partnership-image {
+    max-width: 100%;
+    height: 200px;
+  }
+}

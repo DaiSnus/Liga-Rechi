@@ -1,0 +1,47 @@
+.about-us-section {
+    padding: 3rem 0;
+    background-color: white;
+  }
+  
+  .about-us-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; 
+  }
+  
+  .about-us-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .about-us-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-us-card-title {
+    color: #c00c39;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .about-us-card-content {
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 992px) {
+    .about-us-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-us-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  

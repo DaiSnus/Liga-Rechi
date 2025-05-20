@@ -1,0 +1,305 @@
+.calendar-section {
+    padding: 3rem 0;
+    background-color: #f9f9f9;
+  }
+  
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .event-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-event {
+    border-left: 4px solid #c00c39;
+  }
+  
+  .community-event {
+    border-left: 4px solid #4a90e2;
+  }
+  
+  .event-header {
+    display: flex;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .event-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  
+  .event-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .event-date {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .event-date .date {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .event-date .time {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .event-content {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .event-title {
+    margin-bottom: 0.75rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .event-title:hover {
+    color: #c00c39;
+  }
+  
+  .event-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .event-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+  .event-price {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .event-price.free {
+    color: #2e7d32;
+    background-color: #e8f5e9;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .event-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .event-action {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .event-action.details {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .event-action.details:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .event-action.register {
+    background-color: #c00c39;
+    color: white;
+  }
+  
+  .event-action.register:hover {
+    background-color: #a00a30;
+  }
+  
+  .show-all-container {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .show-all-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #c00c39;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .show-all-button:hover {
+    background-color: #a00a30;
+  }
+  
+
+  .event-modal {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .modal-title {
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .modal-date {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .modal-description {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .modal-people {
+    margin-bottom: 1.5rem;
+  }
+  
+  .modal-people h3 {
+    margin-bottom: 0.75rem;
+    color: #666;
+    font-size: 1.1rem;
+  }
+  
+  .people-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .person {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .person img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+  }
+  
+  .modal-registered {
+    margin-bottom: 2rem;
+  }
+  
+  .modal-registered h3 {
+    margin-bottom: 0.75rem;
+    color: #666;
+    font-size: 1.1rem;
+  }
+  
+  .registered-count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .modal-actions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .modal-action {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .modal-action.website {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .modal-action.website:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .modal-action.register {
+    background-color: #c00c39;
+    color: white;
+    border: none;
+  }
+  
+  .modal-action.register:hover {
+    background-color: #a00a30;
+  }
+  
+  @media (max-width: 768px) {
+    .event-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .event-logo {
+      margin-bottom: 0.75rem;
+    }
+  
+    .event-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .event-actions {
+      width: 100%;
+    }
+  
+    .event-action {
+      flex: 1;
+      text-align: center;
+    }
+  
+    .event-modal {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  
+    .modal-actions {
+      flex-direction: column;
+    }
+  }
+  

@@ -1,0 +1,193 @@
+.banner {
+    display: flex;
+    background-color: white;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 3.75rem 1.5rem;
+    border-radius: 45px;
+  }
+  
+  .banner-image {
+    flex: 2;
+    margin-right: 2rem;
+  }
+  
+  .banner-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .banner-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .login-section {
+    margin-bottom: 1.8rem;
+  }
+  
+  .login-button {
+    width: 17rem;
+    padding: 1.375rem 5.625rem;
+    background-color: rgba(229, 230, 245, 1);
+    color: rgba(72, 64, 88, 1);
+    border: 3px solid rgba(72, 64, 88, 1);
+    border-radius: 14px;
+    font-size: 2rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .contact-block {
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-block:last-child {
+    margin-bottom: 0;
+  }
+  
+  .contact-block h3 {
+    font-size: 1rem;
+    color: rgba(72, 64, 88, 1);
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-block p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(72, 64, 88, 1);
+  }
+  
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .social-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    color: rgba(72, 64, 88, 1);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  .social-link:hover {
+    background-color: #e0e0e0;
+    color: rgba(72, 64, 88, 1);
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .login-modal {
+    background-color: white;
+    border-radius: 14px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: rgba(72, 64, 88, 1);
+  }
+  
+  .login-modal h2 {
+    margin-bottom: 1.5rem;
+    color: rgba(72, 64, 88, 1);
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgba(72, 64, 88, 1);
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(72, 64, 88, 1);
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: rgba(72, 64, 88, 1);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-options {
+    text-align: center;
+  }
+  
+  .login-options p {
+    margin-bottom: 1rem;
+    color: rgba(72, 64, 88, 1);
+  }
+  
+  .social-login-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .social-login {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+  }
+  
+  @media (max-width: 768px) {
+    .banner {
+      flex-direction: column;
+    }
+  
+    .banner-image {
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+    }
+  
+    .login-modal {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  }
+  
