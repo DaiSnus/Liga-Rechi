@@ -1,4 +1,5 @@
-﻿using Liga_Rechi.DataLayer.Entities.Files;
+﻿using Liga_Rechi.DataLayer.Entities;
+using Liga_Rechi.DataLayer.Entities.Files;
 using Liga_Rechi.Services.Models.Admin;
 
 namespace Liga_Rechi.Mapper;
@@ -45,5 +46,19 @@ public static class FileMapper
         fileEntity.FileName = fileModel.FileName ?? "";
 
         return fileEntity;
+    }
+
+    public static RewardTemplateFileEntity? FileEntityToRewardTemplateFileEntity(FileEntity? fileEntity, RewardTemplateEntity rewardTemplateEntity)
+    {
+        if (fileEntity == null) 
+            return null;
+
+        return new RewardTemplateFileEntity
+        {
+            File = fileEntity,
+            RewardTemplate = rewardTemplateEntity,
+            FileId = fileEntity.Id,
+            RewardId = rewardTemplateEntity.Id,
+        };
     }
 }

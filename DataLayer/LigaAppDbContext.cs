@@ -163,7 +163,7 @@ public class LigaAppDbContext : DbContext
         modelBuilder.Entity<RewardIssuanceEntity>()
             .HasMany(r => r.RewardSkillExperience)//связующая таблица для наград и навыков
             .WithOne(rse => rse.RewardIssuance)//
-            .HasForeignKey(rse => rse.RewardId)
+            .HasForeignKey(rse => rse.RewardIssuanceId)
             .OnDelete(DeleteBehavior.SetNull);
 
         modelBuilder.Entity<RewardTemplateEntity>()

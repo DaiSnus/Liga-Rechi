@@ -24,9 +24,11 @@ public class Program
 
         using var scope = app.Services.CreateScope();
         using var appDbContext = scope.ServiceProvider.GetRequiredService<LigaAppDbContext>();
-        DbContextInitializer.InitializeDbContext(appDbContext, new Encrypt());
+        //DbContextInitializer.InitializeDbContext(appDbContext, new Encrypt());
 
-        app.MapGet("/", () => "Hello World!");
+        // Настройка порта для Railway
+        var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+        app.Urls.Add($"http://0.0.0.0:{port}");
 
         app.Run();
     } 
@@ -44,15 +46,20 @@ public class Program
     private static void ConfigureMiddleware(WebApplication app)
     {
         app.UseStaticFiles();
+        app.UseRouting();
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.UseHttpsRedirection();
     }
 
     private static void ConfigureServices(IServiceCollection services, ConfigurationManager configuration)
     {
+        services.AddControllers();
+
         services.AddDbContext<LigaAppDbContext>(options =>
             options.UseNpgsql(configuration["db_connection"]));
 

@@ -15,7 +15,6 @@ public class UserEntity
     public string Status { get; set; } = "";
     public int Level { get; set; } = 1;
     public DateTime CreationDate { get; set; }
-    public bool IsAdmin { get; set; }
     public bool IsActive { get; set; }
     
     public virtual ICollection<UserFileEntity> Files { get; set; }

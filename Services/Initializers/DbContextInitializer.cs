@@ -54,7 +54,6 @@ public class DbContextInitializer
                 Email = email,
                 Password = encrypt.HashPassword(password, salt),
                 IsActive = true,
-                IsAdmin = isAdmin,
                 Level = level,
                 Number = number,
                 Salt = salt,

@@ -1,6 +1,6 @@
-﻿namespace Liga_Rechi.Services.Models.Roles;
+﻿namespace Liga_Rechi.DataLayer.Entities;
 
-public class Admin : IUser
+public class AdminEntity
 {
     public int? Id { get; set; }
     public string FirstName { get; set; } = "";
@@ -9,5 +9,4 @@ public class Admin : IUser
     public required string Password { get; set; }
     public string Salt { get; set; }
     public string City { get; set; } = "";
-    public string UniqueId => Id.ToString()!;
 }

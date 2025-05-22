@@ -5,7 +5,7 @@ namespace Liga_Rechi.Mapper;
 
 public static class UserMapper
 {
-    public static User? UserEntityToUserModel(UserEntity? userEntity)
+    public static User UserEntityToUserModel(UserEntity? userEntity)
     {
         if (userEntity == null)
             return null;
@@ -22,7 +22,7 @@ public static class UserMapper
         };
     }
 
-    public static UserEntity? UserModelToUserEntity(User? userModel)
+    public static UserEntity UserModelToUserEntity(User? userModel)
     {
         if (userModel == null)
             return null;

@@ -20,17 +20,17 @@ public static class EventMapper
         };
     }
 
-    //public static EventEntity? EventModelToEventEntity(Event? eventModel)
-    //{
-    //    if (eventModel == null) 
-    //        return null;
-    //    return new EventEntity
-    //    {
-    //        Title = eventModel.Title ?? "",
-    //        Description = eventModel.Description ?? "",
-    //        Price= eventModel.Price,
-    //        ProjectId = eventModel.ProjectId,
-            
-    //    };
-    //}
+    public static EventEntity? EventModelToEventEntity(Event? eventModel)
+    {
+        if (eventModel == null)
+            return null;
+        return new EventEntity
+        {
+            Title = eventModel.Title ?? "",
+            Description = eventModel.Description ?? "",
+            Price = eventModel.Price,
+            ProjectId = eventModel.ProjectId,
+
+        };
+    }
 }
