@@ -22,6 +22,8 @@ public class Program
 
         ConfigureMiddleware(app);
 
+        app.MapControllers();
+
         using var scope = app.Services.CreateScope();
         using var appDbContext = scope.ServiceProvider.GetRequiredService<LigaAppDbContext>();
         //DbContextInitializer.InitializeDbContext(appDbContext, new Encrypt());
