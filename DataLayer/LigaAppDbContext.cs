@@ -1,5 +1,7 @@
 ﻿using Liga_Rechi.DataLayer.Entities;
 using Liga_Rechi.DataLayer.Entities.Files;
+using Liga_Rechi.DataLayer.Entities.Pages;
+using Liga_Rechi.DataLayer.Entities.Blocks;
 using Microsoft.EntityFrameworkCore;
 using Minio.Exceptions;
 
@@ -13,6 +15,7 @@ public class LigaAppDbContext : DbContext
 
     }
 
+    public DbSet<AdminEntity> Admins { get; set; }
     public DbSet<UserEntity> Users { get; set; }
     public DbSet<ProjectEntity> Projects { get; set; }
     public DbSet<EventEntity> Events { get; set; }
@@ -35,6 +38,9 @@ public class LigaAppDbContext : DbContext
     public DbSet<UserSkillEntity> UserSkills { get; set; }
     public DbSet<RoleEntity> Roles { get; set; }
     public DbSet<RewardTemplateFileEntity> RewardFiles { get; set; }
+    public DbSet<ShowcaseEntity> Showcases { get; set; }
+    public DbSet<PartnershipBlockEntity> PartnershipBlocks { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -249,6 +255,18 @@ public class LigaAppDbContext : DbContext
             .WithOne(rf => rf.RewardTemplate)//
             .HasForeignKey<RewardTemplateFileEntity>(rf => rf.RewardId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<ShowcaseEntity>()
+            .HasOne(s => s.BannerFile)
+            .WithMany()
+            .HasForeignKey(s => s.BannerFileId)
+            .OnDelete(DeleteBehavior.SetNull);
+
+        modelBuilder.Entity<PartnershipBlockEntity>()
+            .HasOne(p => p.Image)
+            .WithMany()
+            .HasForeignKey(p => p.ImageId)
+            .OnDelete(DeleteBehavior.SetNull);
     }
 
     void AutoIncrementAdd(ModelBuilder modelBuilder)
@@ -338,6 +356,14 @@ public class LigaAppDbContext : DbContext
             .ValueGeneratedOnAdd();
 
         modelBuilder.Entity<UserSkillEntity>()
+            .Property(x => x.Id)
+            .ValueGeneratedOnAdd();
+
+        modelBuilder.Entity<ShowcaseEntity>()
+            .Property(x => x.Id)
+            .ValueGeneratedOnAdd();
+
+        modelBuilder.Entity<PartnershipBlockEntity>()
             .Property(x => x.Id)
             .ValueGeneratedOnAdd();
     }

@@ -1,4 +1,6 @@
-﻿namespace Liga_Rechi.Services.Models.Admin;
+﻿using Liga_Rechi.Services.Models.Files;
+
+namespace Liga_Rechi.Services.Models.Admin;
 
 public class RewardTemplate
 {

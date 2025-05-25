@@ -1,4 +1,4 @@
-﻿namespace Liga_Rechi.Services.Models.Admin;
+﻿namespace Liga_Rechi.Services.Models.Files;
 
 public class FileModel
 {

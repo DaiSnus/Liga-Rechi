@@ -364,3 +364,8 @@ FodyWeavers.xsd
 /BillingApplication.Server/logs
 
 .env
+
+# Ignore VSCode settings folder
+.vscode/
+
+.editorconfig

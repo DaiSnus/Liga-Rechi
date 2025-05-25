@@ -3,6 +3,7 @@ using System;
 using Liga_Rechi.DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,24 +12,26 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Liga_Rechi.Migrations
 {
     [DbContext(typeof(LigaAppDbContext))]
-    partial class LigaAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250523083047_addedadmins")]
+    partial class addedadmins
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasAnnotation("ProductVersion", "9.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.AdminEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -59,71 +62,13 @@ namespace Liga_Rechi.Migrations
                     b.ToTable("Admins");
                 });
 
-            modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.Blocks.PartnershipBlockEntity", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
-
-                    b.Property<int?>("ImageId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("MainText")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Text1")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Text2")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Text3")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Text4")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Title1")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Title2")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Title3")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Title4")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ImageId");
-
-                    b.ToTable("PartnershipBlocks");
-                });
-
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.CommunityEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -153,11 +98,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.CommunityTeamEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("CommunityId")
                         .HasColumnType("integer");
@@ -176,11 +121,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.EventEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("CommunityId")
                         .HasColumnType("integer");
@@ -218,11 +163,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.EventParticipantEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("EventId")
                         .HasColumnType("integer");
@@ -246,11 +191,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.EventTeamEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("EventId")
                         .HasColumnType("integer");
@@ -269,11 +214,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.EventTrainerSkillEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("EventId")
                         .HasColumnType("integer");
@@ -297,11 +242,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.Files.CommunityFileEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("CommunityId")
                         .HasColumnType("integer");
@@ -320,11 +265,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.Files.FileEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("FileName")
                         .IsRequired()
@@ -351,11 +296,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.Files.ProjectFileEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("FileId")
                         .HasColumnType("integer");
@@ -374,11 +319,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.Files.RewardTemplateFileEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("FileId")
                         .HasColumnType("integer");
@@ -398,11 +343,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.Files.UserFileEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("FileId")
                         .HasColumnType("integer");
@@ -419,93 +364,13 @@ namespace Liga_Rechi.Migrations
                     b.ToTable("UserFiles");
                 });
 
-            modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.Pages.ShowcaseEntity", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
-
-                    b.Property<string>("AboutUsText1")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("AboutUsText2")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("AboutUsText3")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("AboutUsTitle1")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("AboutUsTitle2")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("AboutUsTitle3")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int?>("BannerFileId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("CalendarLegend")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("CalendarSubtitle")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<bool>("IsAboutUsEnabled")
-                        .HasColumnType("boolean");
-
-                    b.Property<bool>("IsPartnersEnabled")
-                        .HasColumnType("boolean");
-
-                    b.Property<bool>("IsResidentClubsEnabled")
-                        .HasColumnType("boolean");
-
-                    b.Property<int?>("PartnershipBlockId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ResidentClubsSubtitle")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("SocialLinks")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BannerFileId");
-
-                    b.HasIndex("PartnershipBlockId");
-
-                    b.ToTable("Showcases");
-                });
-
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.ProjectEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -534,11 +399,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.ProjectRewardTemplateEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("ProjectId")
                         .HasColumnType("integer");
@@ -557,11 +422,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.ProjectTeamEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("ProjectId")
                         .HasColumnType("integer");
@@ -580,11 +445,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.RewardIssuanceEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -614,11 +479,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.RewardSkillExperienceEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Experience")
                         .HasColumnType("integer");
@@ -640,11 +505,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.RewardTemplateEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -664,11 +529,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.RoleEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -688,11 +553,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.SkillEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -712,11 +577,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.TrainerVisitsEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("EventParticipantId")
                         .HasColumnType("integer");
@@ -735,11 +600,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.UserEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("timestamp with time zone");
@@ -785,11 +650,11 @@ namespace Liga_Rechi.Migrations
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.UserSkillEntity", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int?>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("SkillId")
                         .HasColumnType("integer");
@@ -807,16 +672,6 @@ namespace Liga_Rechi.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserSkills");
-                });
-
-            modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.Blocks.PartnershipBlockEntity", b =>
-                {
-                    b.HasOne("Liga_Rechi.DataLayer.Entities.Files.FileEntity", "Image")
-                        .WithMany()
-                        .HasForeignKey("ImageId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("Image");
                 });
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.CommunityEntity", b =>
@@ -1001,22 +856,6 @@ namespace Liga_Rechi.Migrations
                     b.Navigation("File");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.Pages.ShowcaseEntity", b =>
-                {
-                    b.HasOne("Liga_Rechi.DataLayer.Entities.Files.FileEntity", "BannerFile")
-                        .WithMany()
-                        .HasForeignKey("BannerFileId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.HasOne("Liga_Rechi.DataLayer.Entities.Blocks.PartnershipBlockEntity", "PartnershipBlock")
-                        .WithMany()
-                        .HasForeignKey("PartnershipBlockId");
-
-                    b.Navigation("BannerFile");
-
-                    b.Navigation("PartnershipBlock");
                 });
 
             modelBuilder.Entity("Liga_Rechi.DataLayer.Entities.ProjectEntity", b =>

@@ -5,7 +5,7 @@ namespace Liga_Rechi.Mapper;
 
 public static class AdminMapper
 {
-    public static AdminEntity? AdminModelToAdminEntity(Admin adminModel)
+    public static AdminEntity AdminModelToAdminEntity(Admin? adminModel)
     {
         if (adminModel == null)
             return null;
@@ -20,7 +20,7 @@ public static class AdminMapper
         };
     }
 
-    public static Admin? AdminEntityToUserModel(AdminEntity adminEntity)
+    public static Admin AdminEntityToAdminModel(AdminEntity? adminEntity)
     {
         if (adminEntity == null)
             return null;

@@ -1,6 +1,6 @@
 ﻿using Liga_Rechi.DataLayer.Entities;
 using Liga_Rechi.DataLayer.Entities.Files;
-using Liga_Rechi.Services.Models.Admin;
+using Liga_Rechi.Services.Models.Files;
 
 namespace Liga_Rechi.Mapper;
 
